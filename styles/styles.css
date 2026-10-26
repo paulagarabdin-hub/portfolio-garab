@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* ========================================
+   1. IMPORTACIÓN DE FUENTES
+======================================== */
+/* Títulos: Bricolage Grotesque */
+/* Cuerpo: DM Sans */
+
+
+/* ========================================
+   2. VARIABLES DE COLOR
+======================================== */
+
+:root {
+    /* Colores de marca */
+    --primary-color: #9F4A1F;
+    --secondary-color: #A05E44;
+    --accent-color: #74785A;
+
+    /* Colores neutros y de texto */
+    --neutral-dark: #4A3025;
+    --neutral-medium: #6a6865;
+    --neutral-light: #F0EDE6;
+    --text-color: #665146;
+    --link-color: #32677A;
+
+    /* Colores de superficies */
+    --section-color: #E2D3C7;
+}
+
+
+/* ========================================
+   3. ESTILOS GENERALES
+======================================== */
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--neutral-light);
+    color: var(--text-color);
+}
+
+
+/* ========================================
+   4. TIPOGRAFÍA
+======================================== */
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: var(--neutral-dark);
+}
+
+h1 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* Párrafos */
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Enlaces */
+a {
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+
+/* ========================================
+   5. COMPONENTES Y CLASES
+======================================== */
+
+/* Listas */
+.nav-list {
+    list-style: none;
+}
+
+.tag-list {
+    list-style: none;
+    color: var(--neutral-medium);
+}
+
+/* Etiquetas superiores (Eyebrows) */
+.eyebrow-primary {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.eyebrow-secondary {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--neutral-medium);
+}
+
+
+/* ========================================
+   6. ESTRUCTURA DE PÁGINA
+======================================== */
+
+/* Pie de página */
+footer {
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: var(--section-color);
+}
