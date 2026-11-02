@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* ========================================
@@ -15,33 +16,46 @@
     /* Colores de marca */
     --primary-color: #9F4A1F;
     --secondary-color: #A05E44;
-    --accent-color: #74785A;
+    --accent-color: #6c7054;
 
     /* Colores neutros y de texto */
     --neutral-dark: #4A3025;
     --neutral-medium: #6a6865;
-    --neutral-light: #F0EDE6;
+    --neutral-light: #EAE6DE;
     --text-color: #665146;
     --link-color: #32677A;
 
     /* Colores de superficies */
-    --section-color: #E2D3C7;
+    --section-color: #E4DFD6;
+    --background-color: #F0EDE6;
+    --card-color: #FAF8F4;
 }
 
 
 /* ========================================
-   3. ESTILOS GENERALES
+   3. RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   4. ESTILOS GENERALES
 ======================================== */
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background-color: var(--neutral-light);
+    background-color: var(--background-color);
     color: var(--text-color);
 }
 
 
 /* ========================================
-   4. TIPOGRAFÍA
+   5. TIPOGRAFÍA
 ======================================== */
 
 /* Títulos */
@@ -51,27 +65,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5rem; /* 40px */
+    font-size: 3.5rem; /* 56px */
     font-weight: 700;
     line-height: 1.2;
+    max-width: 22ch;
 }
 
 h2 {
     font-size: 2rem; /* 32px */
     font-weight: 700;
     line-height: 1.25;
+    max-width: 30ch;
 }
 
 h3 {
     font-size: 1.5rem; /* 24px */
     font-weight: 600;
     line-height: 1.3;
+    max-width: 35ch;
 }
 
 h4 {
     font-size: 1.25rem; /* 20px */
     font-weight: 600;
     line-height: 1.4;
+    max-width: 40ch;
 }
 
 /* Párrafos */
@@ -79,6 +97,7 @@ p {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.6;
+    max-width: 65ch;
 }
 
 /* Enlaces */
@@ -86,25 +105,23 @@ a {
     font-weight: 500;
     font-size: 0.85rem;
     text-decoration: none;
-    color: var(--link-color);
+    color: var(--accent-color);
+}
+
+/* Texto pequeño */
+.text-small {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--text-color)
 }
 
 
 /* ========================================
-   5. COMPONENTES Y CLASES
+   6. COMPONENTES REUTILIZABLES
 ======================================== */
 
-/* Listas */
-.nav-list {
-    list-style: none;
-}
+/* 6.1. Etiquetas superiores (Eyebrows) */
 
-.tag-list {
-    list-style: none;
-    color: var(--neutral-medium);
-}
-
-/* Etiquetas superiores (Eyebrows) */
 .eyebrow-primary {
     text-transform: uppercase;
     font-weight: 600;
@@ -119,15 +136,246 @@ a {
     color: var(--neutral-medium);
 }
 
+.eyebrow-pill {
+    background-color: var(--section-color);
+    padding: 8px 32px;
+    border: 1px solid var(--text-color);
+    border-radius: 32px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+/* 6.2. Listas */
+
+.nav-list {
+    list-style: none;
+}
+
+.tag-list {
+    list-style: none;
+    color: var(--neutral-medium);
+}
+
+/* 6.3. Tarjetas (Cards) */
+
+.cards article {
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--neutral-light);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cards figure {
+    margin: 0;
+}
+
+.img-card {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-content {
+    background-color: #EAE6DE;
+    border-radius: 0 0 8px 8px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin: 8px 0;
+}
+
+.card-content p {
+    margin: 0;
+}
+
+/* 6.4. Tarjetas de servicios */
+
+.service-card {
+    background-color: var(--card-color);
+    border: 1px solid transparent;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    flex: 1;
+}
+
+/* 6.5. Etiquetas (Tags / Pills) */
+
+.tags-pills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tags-pills li {
+    color: var(--text-color);
+    background-color: var(--section-color);
+    padding: 8px 16px;
+    border: 1px solid var(--text-color);
+    border-radius: 32px;
+}
+
+/* 6.6. Botones */
+
+.botton-primary {
+    background-color: var(--primary-color);
+    padding: 8px 32px;
+    border-radius: 32px;
+    display: inline-block;
+    color: #FFFFFF;
+}
+
+/* 6.7. Formularios */
+
+.form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 600px;
+    text-align: left;
+    gap: 8px;
+}
+
+.box-form {
+    border-radius: 8px;
+    border: 1px solid var(--text-color);
+    min-height: 24px;
+}
+
 
 /* ========================================
-   6. ESTRUCTURA DE PÁGINA
+   7. LAYOUTS Y CONTENEDORES
 ======================================== */
 
-/* Pie de página */
+/* 7.1. Contenedor principal */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 64px 128px;
+    gap: 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 7.2. Contenedores de contenido */
+
+.content-row {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    align-items: center;
+}
+
+/* 7.3. Layout de Hero */
+
+.text-hero {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items:flex-start;
+}
+
+.hero-title {
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 8px;
+}
+
+.img-hero {
+    border-radius: 8px;
+    flex: 1 1 200px;
+}
+
+/* 7.4. Layout de proyectos */
+
+.projects {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 7.5. Layout de CTA */
+
+.cta-content {
+    background-color: var(--section-color);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    text-align: center;
+}
+
+
+/* ========================================
+   8. ESTRUCTURA DE PÁGINA
+======================================== */
+
+/* 8.1. Header y navegación */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 32px;
+    border-bottom: 1px solid var(--neutral-dark)
+}
+
+nav ul {
+    display: flex;
+    gap: 20px
+}
+
+/* 8.2. Hero */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+}
+
+/* 8.3. Footer */
+
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
     font-size: 0.85rem;
     font-weight: 400;
     line-height: 1.5;
     background-color: var(--section-color);
+    border-top: 1px solid var(--text-color);
 }
