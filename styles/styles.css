@@ -379,3 +379,178 @@ footer {
     background-color: var(--section-color);
     border-top: 1px solid var(--text-color);
 }
+
+
+/* ========================================
+   9. HOME — RESPONSIVE MOBILE-FIRST
+   Reglas aisladas para no alterar otras páginas.
+======================================== */
+
+/* 9.1. Base mobile: contenedor principal con Flexbox */
+.home-page .page-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 7vw, 5rem);
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem clamp(1rem, 4vw, 3rem);
+}
+
+/* 9.2. Navegación adaptable sin ocultar enlaces */
+.home-page header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.home-page header img { max-width: 100%; height: auto; }
+.home-page nav { width: 100%; }
+.home-page .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem 1.25rem;
+}
+
+/* 9.3. Hero: áreas nombradas, una columna en mobile */
+.home-page .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "content" "image";
+    align-items: center;
+    gap: 2rem;
+}
+.home-page .text-hero { grid-area: content; min-width: 0; }
+.home-page .hero-media { grid-area: image; min-width: 0; }
+.home-page .hero-title { font-size: clamp(2.25rem, 7vw, 3.5rem); }
+.home-page .eyebrow-pill {
+    max-width: 100%;
+    padding: .5rem 1rem;
+    font-size: .75rem;
+}
+.home-page .img-hero {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 9.4. Segundo uso de Grid: tarjetas en columnas con fr */
+.home-page .cards {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 680px;
+    align-items: stretch;
+}
+.home-page .cards article { width: 100%; max-width: none; }
+.home-page .img-card { width: 100%; max-width: none; height: auto; }
+.home-page .section-content { min-width: 0; gap: 1rem; }
+.home-page .section-content h2 { font-size: clamp(1.65rem, 4vw, 2rem); }
+
+/* 9.5. Footer apilado en mobile */
+.home-page footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem clamp(1rem, 4vw, 3rem);
+}
+
+/* 9.6. Tablet: dos columnas para los proyectos */
+@media (min-width: 768px) {
+    .home-page .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .home-page header { justify-content: space-between; }
+    .home-page nav { width: auto; }
+    .home-page footer { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+/* 9.7. Desktop: hero en dos áreas horizontales */
+@media (min-width: 1024px) {
+    .home-page .page-container { padding: 4rem clamp(2rem, 5vw, 5rem); }
+    .home-page .hero {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        grid-template-areas: "content image";
+        gap: clamp(2rem, 5vw, 4rem);
+    }
+    .home-page .cards { gap: 2.5rem; }
+}
+
+
+/* ========================================
+   10. SERVICIOS — RESPONSIVE MOBILE-FIRST
+   Se conserva Flexbox salvo en las tarjetas.
+======================================== */
+
+/* Mobile: espacios fluidos y secciones apiladas */
+.services-page .page-container {
+    padding: 2rem clamp(1rem, 4vw, 3rem);
+    gap: clamp(3rem, 7vw, 5rem);
+    width: 100%;
+}
+.services-page h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); }
+.services-page h2 { font-size: clamp(1.65rem, 4vw, 2rem); }
+.services-page .page-container > section:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+/* Navegación: se adapta sin ocultar enlaces */
+.services-page header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.services-page header img { max-width: 100%; height: auto; }
+.services-page nav { width: 100%; }
+.services-page .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem 1.25rem;
+}
+
+/* Único Grid de esta página: tarjetas de servicios */
+.services-page .services-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+.services-page .service-card {
+    width: 100%;
+    min-width: 0;
+    flex: none;
+}
+.services-page .cta-content { padding: clamp(1.5rem, 4vw, 2rem); }
+.services-page .botton-primary { max-width: 100%; }
+
+.services-page footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem clamp(1rem, 4vw, 3rem);
+}
+
+/* Tablet: tarjetas en dos columnas */
+@media (min-width: 768px) {
+    .services-page .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .services-page header { justify-content: space-between; }
+    .services-page nav { width: auto; }
+    .services-page footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Desktop: las tres tarjetas comparten una fila */
+@media (min-width: 1024px) {
+    .services-page .page-container { padding: 4rem clamp(2rem, 5vw, 5rem); }
+    .services-page .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
