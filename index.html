@@ -1,65 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paula Garab | Portfolio de Diseño Ux/Ui y Producto</title>
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+
+    <!-- ESTILOS PERSONALIZADOS -->
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<body>
+
+<body class="home-page">
+    <!-- HEADER Y NAVEGACIÓN -->
     <header>
-        <img src="./assets/logotipo.png" alt="Logotipo de Paula Garab en color marrón, compuesto por un símbolo de la letra g estilizada y el texto paula garab en tipografía sans serif de trazos gruesos." width="150">
-        <nav>
-            <ul class="nav-list">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./pages/sobre-mi.html">Sobre mí</a></li>
-                <li><a href="./pages/proyectos.html">Proyectos</a></li>
-                <li><a href="./pages/servicios.html">Servicios</a></li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.html" aria-label="Ir al inicio">
+                    <img src="./assets/logotipo.png" alt="Logotipo de Paula Garab" width="150">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Alternar menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-close-icon">&times;</span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/servicios.html">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="page-container">
+
+        <!-- HERO -->
         <section class="hero">
             <div class="text-hero">
                 <p class="eyebrow-pill">Product Designer · Saas B2B · Design System</p>
                 <h1 class="hero-title">Diseño digital, visión integral.</h1>
-                <p>Soy Product Designer con formación en Diseño Industrial e Interiorismo. Combino investigación, pensamiento sistémico y diseño de interfaces para crear productos digitales intuitivos, consistentes y escalables.</p>
+                <p>Soy Product Designer con formación en Diseño Industrial e Interiorismo. Combino investigación,
+                    pensamiento sistémico y diseño de interfaces para crear productos digitales intuitivos, consistentes
+                    y escalables.</p>
             </div>
-            <div>
-                <img class="img-hero" src="./assets/garab.png" alt="Diseñadora sonriente con camiseta negra y jeans, apoyada sobre una mesa de trabajo en un estudio luminoso, junto a una planta de interior." width="400">
+            <div class="hero-media">
+                <img class="img-hero" src="./assets/garab.png"
+                    alt="Diseñadora sonriente con camiseta negra y jeans, apoyada sobre una mesa de trabajo en un estudio luminoso, junto a una planta de interior."
+                    width="400">
             </div>
         </section>
+
+        <!-- PROYECTOS DESTACADOS -->
         <section class="section-content">
             <div>
                 <h2>Proyectos destacados</h2>
-                <p>Una selección de tres casos que muestran cómo pienso, investigo y diseño.</p>
+                <p>Una selección de dos casos que muestran cómo pienso, investigo y diseño.</p>
             </div>
-            <div class="cards">
-                <article>
-                    <figure>
-                        <img class="img-card" src="./assets/deriva.png" alt="Mockup de app mobile Deriva mostrando pantallas de conexión entre usuarios." width="300">
-                    </figure>
 
-                    <div class="card-content">
-                        <h3>Deriva</h3>
-                        <p>App que conecta personas por afinidad, usando el territorio como señal.</p>
+            <!-- PROYECTO 1: DERIVA -->
+            <div class="cards">
+                <article class="card">
+                    <img class="card-img-top" src="./assets/deriva.png"
+                        alt="Mockup de app mobile Deriva mostrando pantallas de conexión entre usuarios.">
+
+                    <div class="card-body">
+                        <h3 class="card-title">Deriva</h3>
+                        <p class="card-text">App que conecta personas por afinidad, usando el territorio como señal.</p>
+                        <a href="./pages/deriva.html" class="btn btn-primary">Ver caso de estudio →</a>
                     </div>
                 </article>
 
-                <article>
-                    <figure>
-                        <img class="img-card" src="./assets/partify.png" alt="Mockup de dos pantallas de una aplicación móvil para organizar eventos." width="300">
-                    </figure>
+                <!-- PROYECTO 2: PARTIFY -->
+                <article class="card">
+                    <img class="card-img-top" src="./assets/partify.png"
+                        alt="Mockup de dos pantallas de una aplicación móvil para organizar eventos.">
 
-                    <div class="card-content">
-                        <h3>Partify</h3>
-                        <p>Auditoría UX de 6 flujos y 39 hallazgos, más Design System completo con validación WCAG AA.</p>
+                    <div class="card-body">
+                        <h3 class="card-title">Partify</h3>
+                        <p class="card-text">Auditoría UX de 6 flujos y 39 hallazgos, más Design System completo con validación WCAG AA.</p>
+                        <button type="button" class="btn btn-outline-primary" disabled>Próximamente</button>
                     </div>
                 </article>
             </div>
         </section>
     </main>
+
+    <!-- FOOTER -->
     <footer>
         <div>
             <h4>Paula Garab</h4>
@@ -70,5 +116,11 @@
             <p>© 2026 · Paula Garab. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
